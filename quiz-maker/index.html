@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNova | Online Quiz Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">QuizNova</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#create">Create Quiz</a>
+        <a href="#quizzes">Take Quiz</a>
+        <a href="#result">Result</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h3>Interactive Online Quiz Maker</h3>
+        <h1>Create, Take & Score Quizzes Instantly</h1>
+        <p>
+            QuizNova is a futuristic quiz platform where users can create quizzes,
+            answer questions, and get instant feedback with scores.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#create" class="btn">Create Quiz</a>
+            <a href="#quizzes" class="btn-outline">Take Quiz</a>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <h2>Quiz Stats</h2>
+        <div class="stat-box">5+ Quiz Categories</div>
+        <div class="stat-box">Instant Score</div>
+        <div class="stat-box">Multiple Choice Questions</div>
+    </div>
+</section>
+
+<section class="create-section" id="create">
+    <h1 class="section-title">Create Your Quiz</h1>
+
+    <div class="form-card">
+        <input type="text" id="quizTitle" placeholder="Quiz Title">
+
+        <input type="text" id="question" placeholder="Enter Question">
+
+        <input type="text" id="option1" placeholder="Option A">
+        <input type="text" id="option2" placeholder="Option B">
+        <input type="text" id="option3" placeholder="Option C">
+        <input type="text" id="option4" placeholder="Option D">
+
+        <select id="correctAnswer">
+            <option value="">Select Correct Answer</option>
+            <option value="0">Option A</option>
+            <option value="1">Option B</option>
+            <option value="2">Option C</option>
+            <option value="3">Option D</option>
+        </select>
+
+        <button onclick="addQuestion()">Add Question</button>
+        <button onclick="saveQuiz()">Save Quiz</button>
+
+        <p id="createMessage"></p>
+    </div>
+</section>
+
+<section class="quiz-list-section" id="quizzes">
+    <h1 class="section-title">Available Quizzes</h1>
+
+    <div id="quizList" class="quiz-list"></div>
+</section>
+
+<section class="take-section">
+    <h1 class="section-title">Take Quiz</h1>
+
+    <div id="quizBox" class="quiz-box">
+        <h2 id="activeQuizTitle">Select a quiz to start</h2>
+        <p id="activeQuestion"></p>
+
+        <div id="optionsBox"></div>
+
+        <button id="nextBtn" onclick="nextQuestion()">Next Question</button>
+    </div>
+</section>
+
+<section class="result-section" id="result">
+    <h1 class="section-title">Quiz Result</h1>
+
+    <div class="result-card">
+        <h2 id="scoreText">Your score will appear here</h2>
+        <p id="feedbackText"></p>
+    </div>
+</section>
+
+<footer>
+    © 2026 QuizNova | Designed by Nancy Nishad
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
