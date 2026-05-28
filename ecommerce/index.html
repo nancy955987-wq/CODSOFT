@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoMart | E-Commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">NeoMart</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#cart">Cart</a>
+        <a href="#checkout">Checkout</a>
+        <a href="#login">Login</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h3>Futuristic Online Store</h3>
+        <h1>Shop Smart With NeoMart</h1>
+        <p>
+            NeoMart is a modern e-commerce platform where users can browse products,
+            filter items, add products to cart, and proceed to checkout.
+        </p>
+
+        <a href="#products" class="btn">Shop Now</a>
+    </div>
+
+    <div class="hero-card">
+        <h2>Today’s Deal</h2>
+        <p>Smart Watch</p>
+        <h1>40% OFF</h1>
+    </div>
+</section>
+
+<section class="filter-section">
+    <h1 class="section-title">Product Filtering</h1>
+
+    <div class="filters">
+        <button onclick="filterProducts('all')">All</button>
+        <button onclick="filterProducts('electronics')">Electronics</button>
+        <button onclick="filterProducts('fashion')">Fashion</button>
+        <button onclick="filterProducts('accessories')">Accessories</button>
+    </div>
+</section>
+
+<section class="products-section" id="products">
+    <h1 class="section-title">Products</h1>
+
+    <div class="products-grid">
+
+        <div class="product-card" data-category="electronics">
+            <div class="product-img">⌚</div>
+            <h2>Smart Watch</h2>
+            <p>Category: Electronics</p>
+            <h3>₹2,999</h3>
+            <button onclick="addToCart('Smart Watch', 2999)">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="electronics">
+            <div class="product-img">🎧</div>
+            <h2>Wireless Headphones</h2>
+            <p>Category: Electronics</p>
+            <h3>₹1,999</h3>
+            <button onclick="addToCart('Wireless Headphones', 1999)">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="fashion">
+            <div class="product-img">👟</div>
+            <h2>Running Shoes</h2>
+            <p>Category: Fashion</p>
+            <h3>₹2,499</h3>
+            <button onclick="addToCart('Running Shoes', 2499)">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="fashion">
+            <div class="product-img">🧥</div>
+            <h2>Winter Jacket</h2>
+            <p>Category: Fashion</p>
+            <h3>₹3,499</h3>
+            <button onclick="addToCart('Winter Jacket', 3499)">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="accessories">
+            <div class="product-img">👜</div>
+            <h2>Leather Bag</h2>
+            <p>Category: Accessories</p>
+            <h3>₹1,499</h3>
+            <button onclick="addToCart('Leather Bag', 1499)">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="accessories">
+            <div class="product-img">🕶️</div>
+            <h2>Sunglasses</h2>
+            <p>Category: Accessories</p>
+            <h3>₹899</h3>
+            <button onclick="addToCart('Sunglasses', 899)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="cart-section" id="cart">
+    <h1 class="section-title">Shopping Cart</h1>
+
+    <div class="cart-box">
+        <ul id="cartItems"></ul>
+        <h2>Total: ₹<span id="totalPrice">0</span></h2>
+    </div>
+</section>
+
+<section class="checkout-section" id="checkout">
+    <h1 class="section-title">Checkout</h1>
+
+    <div class="checkout-card">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Shipping Address">
+        <input type="text" placeholder="Payment Method: Card / UPI / COD">
+
+        <button onclick="placeOrder()">Place Order</button>
+    </div>
+</section>
+
+<section class="login-section" id="login">
+    <h1 class="section-title">User Authentication</h1>
+
+    <div class="login-card">
+        <h2>Login / Register</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </div>
+</section>
+
+<div id="notification">Item added to cart ✅</div>
+
+<footer>
+    © 2026 NeoMart E-Commerce | Designed by Nancy Nishad
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
