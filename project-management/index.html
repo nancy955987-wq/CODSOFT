@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskNova | Project Management Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">TaskNova</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#create">Create Project</a>
+        <a href="#tasks">Tasks</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h3>Smart Project Management</h3>
+        <h1>Organize Projects, Tasks & Deadlines</h1>
+        <p>
+            TaskNova helps teams create projects, assign tasks, set deadlines,
+            and track work progress in a simple futuristic dashboard.
+        </p>
+        <a href="#create" class="btn">Create Project</a>
+    </div>
+
+    <div class="hero-card">
+        <h2>Project Progress</h2>
+        <div class="progress-circle">75%</div>
+        <p>Tasks Completed</p>
+    </div>
+</section>
+
+<section class="dashboard" id="dashboard">
+    <h1 class="section-title">Dashboard Overview</h1>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h2 id="totalProjects">0</h2>
+            <p>Total Projects</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="totalTasks">0</h2>
+            <p>Total Tasks</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="completedTasks">0</h2>
+            <p>Completed Tasks</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="pendingTasks">0</h2>
+            <p>Pending Tasks</p>
+        </div>
+    </div>
+</section>
+
+<section class="create-section" id="create">
+    <h1 class="section-title">Create New Project</h1>
+
+    <div class="form-card">
+        <input type="text" id="projectName" placeholder="Project Name">
+        <input type="text" id="taskName" placeholder="Task Name">
+        <input type="text" id="assignedTo" placeholder="Assigned To">
+        <input type="date" id="deadline">
+        <select id="priority">
+            <option value="">Select Priority</option>
+            <option value="High">High Priority</option>
+            <option value="Medium">Medium Priority</option>
+            <option value="Low">Low Priority</option>
+        </select>
+
+        <button onclick="addTask()">Add Task</button>
+    </div>
+</section>
+
+<section class="tasks-section" id="tasks">
+    <h1 class="section-title">Project Tasks</h1>
+
+    <div id="taskList" class="task-list"></div>
+</section>
+
+<div id="notification">Task Added Successfully ✅</div>
+
+<footer>
+    © 2026 TaskNova Project Management Tool | Designed by Nancy Nishad
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
