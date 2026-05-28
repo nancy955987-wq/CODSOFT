@@ -1,121 +1,65 @@
-<<<<<<< HEAD
+// JOB SEARCH FUNCTION
+
 function searchJobs(){
-    const input = document.getElementById("searchInput").value.toLowerCase();
-    const jobs = document.querySelectorAll(".job-card");
 
-    jobs.forEach(job => {
-        const text = job.getAttribute("data-title").toLowerCase();
+  const input = document.getElementById("searchInput").value.toLowerCase();
 
-        if(text.includes(input)){
-            job.style.display = "block";
-        }else{
-            job.style.display = "none";
-        }
-    });
+  const cards = document.querySelectorAll(".job-card");
+
+  cards.forEach(card => {
+
+    const jobTitle = card.querySelector("h2").innerText.toLowerCase();
+
+    if(jobTitle.includes(input)){
+      card.style.display = "block";
+    }
+    else{
+      card.style.display = "none";
+    }
+
+  });
+
 }
 
-function openApplyForm(jobTitle){
-    document.getElementById("selectedJob").value = jobTitle;
+
+// AUTO SEARCH WHILE TYPING
+
+document.getElementById("searchInput").addEventListener("keyup", searchJobs);
+
+
+// APPLY BUTTON FUNCTION
+
+const applyButtons = document.querySelectorAll(".apply-job-btn");
+
+applyButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const jobCard = button.parentElement;
+
+    const jobName = jobCard.querySelector("h2").innerText;
+
+    document.querySelector(".apply-card input").value = jobName;
 
     document.getElementById("apply").scrollIntoView({
-        behavior:"smooth"
-    });
-}
-
-function submitApplication(){
-    const notification = document.getElementById("notification");
-
-    notification.style.display = "block";
-
-    setTimeout(() => {
-        notification.style.display = "none";
-    },3000);
-}
-=======
-// Show sections on page load
-const sections = document.querySelectorAll("section");
-
-function revealSections() {
-
-    sections.forEach(section => {
-
-        const sectionTop = section.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-
-        if (sectionTop < screenPosition) {
-
-            section.classList.add("show");
-
-        }
-
+      behavior:"smooth"
     });
 
-}
+  });
 
-// Run on page load
-revealSections();
+});
 
-// Run while scrolling
-window.addEventListener("scroll", revealSections);
 
-console.log("Welcome to Nancy Nishad Portfolio Website");// Typing Animation
+// SUBMIT APPLICATION NOTIFICATION
 
-const typingText = document.querySelector(".typing");
+function showNotification(){
 
-const words = [
-    "Web Developer",
-    "UI Designer",
-    "Flutter Developer",
-    "Creative Coder"
-];
+  const notification = document.getElementById("notification");
 
-let wordIndex = 0;
-let charIndex = 0;
+  notification.style.display = "block";
 
-function typeEffect() {
-
-    if(charIndex < words[wordIndex].length){
-
-        typingText.textContent += words[wordIndex].charAt(charIndex);
-
-        charIndex++;
-
-        setTimeout(typeEffect, 100);
-
-    }
-    else{
-
-        setTimeout(eraseEffect, 1500);
-
-    }
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 3000);
 
 }
-
-function eraseEffect(){
-
-    if(charIndex > 0){
-
-        typingText.textContent =
-        words[wordIndex].substring(0, charIndex - 1);
-
-        charIndex--;
-
-        setTimeout(eraseEffect, 50);
-
-    }
-    else{
-
-        wordIndex++;
-
-        if(wordIndex >= words.length){
-            wordIndex = 0;
-        }
-
-        setTimeout(typeEffect, 300);
-
-    }
-
-}
-
-typeEffect();
->>>>>>> 3eea45e5fff65ebbb3dddebc288e1d9a8748e903

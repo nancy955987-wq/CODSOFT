@@ -1,357 +1,220 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoHire Job Board</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeoHire Job Board</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+  <!-- Navbar -->
+  <header>
+    <div class="logo">NeoHire</div>
+
     <nav>
-        <h1 class="logo">NeoHire</h1>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#jobs">Jobs</a></li>
-            <li><a href="#employer">Employer</a></li>
-            <li><a href="#candidate">Candidate</a></li>
-            <li><a href="#apply">Apply</a></li>
-        </ul>
-        <a href="#apply" class="nav-btn">Apply Now</a>
+      <a href="#home">Home</a>
+      <a href="#jobs">Jobs</a>
+      <a href="#employer">Employer</a>
+      <a href="#candidate">Candidate</a>
+      <a href="#apply">Apply</a>
     </nav>
-</header>
 
-<section class="hero" id="home">
+    <a href="#apply" class="apply-btn">Apply Now</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+
     <div class="hero-text">
-        <span>Future of Hiring</span>
-        <h1>Find Your Dream Job With NeoHire</h1>
-        <p>A futuristic job board platform where candidates can search jobs and employers can post opportunities.</p>
-        <div class="hero-buttons">
-            <a href="#jobs" class="btn">Browse Jobs</a>
-            <a href="#employer" class="btn outline">Post a Job</a>
-        </div>
+      <h3>Future of Hiring</h3>
+
+      <h1>
+        Find Your Dream <br>
+        Job With NeoHire
+      </h1>
+
+      <p>
+        NeoHire is a futuristic job board platform where job seekers can
+        discover opportunities and employers can post jobs easily.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#jobs" class="btn">Browse Jobs</a>
+        <a href="#employer" class="btn-outline">Post a Job</a>
+      </div>
     </div>
 
-    <div class="hero-card">
-        <h2>Featured Jobs</h2>
-        <div class="mini-job">Frontend Developer <br><small>Remote • ₹6 LPA</small></div>
-        <div class="mini-job">UI/UX Designer <br><small>Delhi • ₹4 LPA</small></div>
-        <div class="mini-job">Flutter Developer <br><small>Hybrid • ₹5 LPA</small></div>
-    </div>
-</section>
+    <div class="featured-card">
+      <h2>Featured Jobs</h2>
 
-<section class="search-section">
-    <h2>Search Jobs</h2>
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search by job title or skill...">
-        <button onclick="searchJobs()">Search</button>
-    </div>
-</section>
-
-<section class="jobs" id="jobs">
-    <h2 class="section-title">Latest Job Openings</h2>
-
-    <div class="job-container">
-
-        <div class="job-card" data-title="frontend developer html css javascript">
-            <h3>Frontend Developer</h3>
-            <p>TechNova Solutions</p>
-            <p>Skills: HTML, CSS, JavaScript</p>
-            <p>Location: Remote</p>
-            <p>Salary: ₹6 LPA</p>
-            <button onclick="openApplyForm('Frontend Developer')">Apply</button>
-        </div>
-
-        <div class="job-card" data-title="ui ux designer figma design">
-            <h3>UI/UX Designer</h3>
-            <p>PixelSoft Studio</p>
-            <p>Skills: Figma, Wireframing</p>
-            <p>Location: Delhi</p>
-            <p>Salary: ₹4 LPA</p>
-            <button onclick="openApplyForm('UI/UX Designer')">Apply</button>
-        </div>
-
-        <div class="job-card" data-title="flutter developer dart mobile app">
-            <h3>Flutter Developer</h3>
-            <p>AppVerse Labs</p>
-            <p>Skills: Flutter, Dart, Firebase</p>
-            <p>Location: Hybrid</p>
-            <p>Salary: ₹5 LPA</p>
-            <button onclick="openApplyForm('Flutter Developer')">Apply</button>
-        </div>
-
-        <div class="job-card" data-title="backend developer node mongodb express">
-            <h3>Backend Developer</h3>
-            <p>CodeSphere</p>
-            <p>Skills: Node.js, Express, MongoDB</p>
-            <p>Location: Bengaluru</p>
-            <p>Salary: ₹7 LPA</p>
-            <button onclick="openApplyForm('Backend Developer')">Apply</button>
-        </div>
-
-    </div>
-</section>
-
-<section class="job-detail">
-    <h2 class="section-title">Job Detail Page</h2>
-    <div class="box">
+      <div class="mini-job">
         <h3>Frontend Developer</h3>
-        <p>Build responsive and modern web interfaces using HTML, CSS, and JavaScript.</p>
-        <ul>
-            <li>Develop responsive websites</li>
-            <li>Work with UI/UX designers</li>
-            <li>Improve website performance</li>
-            <li>Create user-friendly interfaces</li>
-        </ul>
+        <p>Remote • ₹6 LPA</p>
+      </div>
+
+      <div class="mini-job">
+        <h3>UI/UX Designer</h3>
+        <p>Delhi • ₹4 LPA</p>
+      </div>
+
+      <div class="mini-job">
+        <h3>Flutter Developer</h3>
+        <p>Hybrid • ₹5 LPA</p>
+      </div>
+
     </div>
-</section>
 
-<section class="dashboard" id="employer">
-    <h2 class="section-title">Employer Dashboard</h2>
-    <div class="box">
-        <h3>Post a Job Opening</h3>
-        <input type="text" placeholder="Company Name">
-        <input type="text" placeholder="Job Title">
-        <input type="text" placeholder="Location">
-        <input type="text" placeholder="Salary">
-        <textarea placeholder="Job Description"></textarea>
-        <button class="full-btn">Post Job</button>
+  </section>
+
+  <!-- Search -->
+  <section class="search-section">
+
+    <h2>Search Jobs</h2>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search by job title...">
+      <button onclick="searchJobs()">Search</button>
     </div>
-</section>
 
-<section class="dashboard" id="candidate">
-    <h2 class="section-title">Candidate Dashboard</h2>
-    <div class="candidate-box">
-        <div>
-            <h3>Nancy Nishad</h3>
-            <p>Profile: Web Developer</p>
-            <p>Applications Sent: 3</p>
-            <p>Status: Active Candidate</p>
-        </div>
-        <div>
-            <h3>Saved Jobs</h3>
-            <p>Frontend Developer</p>
-            <p>UI/UX Designer</p>
-        </div>
+  </section>
+
+  <!-- Jobs -->
+  <section class="jobs-section" id="jobs">
+
+    <h1 class="section-title">Latest Job Openings</h1>
+
+    <div class="jobs-grid">
+
+      <div class="job-card">
+        <h2>Frontend Developer</h2>
+        <h4>TechNova Solutions</h4>
+
+        <p>Skills: HTML, CSS, JavaScript</p>
+        <p>Location: Remote</p>
+        <p>Salary: ₹6 LPA</p>
+
+        <button class="apply-job-btn">Apply</button>
+      </div>
+
+      <div class="job-card">
+        <h2>UI/UX Designer</h2>
+        <h4>PixelSoft Studio</h4>
+
+        <p>Skills: Figma, Wireframing, Prototyping</p>
+        <p>Location: Delhi</p>
+        <p>Salary: ₹4 LPA</p>
+
+        <button class="apply-job-btn">Apply</button>
+      </div>
+
+      <div class="job-card">
+        <h2>Flutter Developer</h2>
+        <h4>AppVerse Labs</h4>
+
+        <p>Skills: Flutter, Dart, Firebase</p>
+        <p>Location: Hybrid</p>
+        <p>Salary: ₹5 LPA</p>
+
+        <button class="apply-job-btn">Apply</button>
+      </div>
+
+      <div class="job-card">
+        <h2>Backend Developer</h2>
+        <h4>CodeSphere</h4>
+
+        <p>Skills: Node.js, Express, MongoDB</p>
+        <p>Location: Bengaluru</p>
+        <p>Salary: ₹7 LPA</p>
+
+        <button class="apply-job-btn">Apply</button>
+      </div>
+
     </div>
-</section>
-
-<section class="apply" id="apply">
-    <h2 class="section-title">Job Application Form</h2>
-    <form class="apply-form">
-        <input type="text" id="selectedJob" placeholder="Selected Job" readonly>
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email Address">
-        <input type="text" placeholder="Phone Number">
-        <input type="file">
-        <textarea placeholder="Why should we hire you?"></textarea>
-        <button type="button" class="full-btn" onclick="submitApplication()">Submit Application</button>
-    </form>
-</section>
-
-<div id="notification">Application submitted successfully!</div>
-
-<footer>
-    <p>© 2026 NeoHire Job Board | Designed by Nancy Nishad</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nancy Portfolio</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+  </section>
 
-<body>
+  <!-- Employer -->
+  <section class="dashboard-section" id="employer">
 
-<div class="stars"></div>
-<div class="stars2"></div>
-<div class="stars3"></div>
+    <h1 class="section-title">Employer Dashboard</h1>
 
-    <!-- HEADER -->
-    <header>
-        <nav>
-            <h1 class="logo">NANCY.</h1>
+    <div class="dashboard-card">
 
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+      <h2>Post a Job Opening</h2>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
+      <input type="text" placeholder="Company Name">
+      <input type="text" placeholder="Job Title">
+      <input type="text" placeholder="Location">
+      <input type="text" placeholder="Salary">
 
-        <div class="hero-text">
-            <h2>Hello, I'm</h2>
-            <h1>Nancy Nishad</h1>
+      <textarea placeholder="Job Description"></textarea>
 
-<h3><span class="typing"></span></h3>
-            <p>
-                I create futuristic websites, mobile apps,
-                and creative digital experiences with modern UI.
-            </p>
+      <button>Post Job</button>
 
-            <div class="hero-buttons">
+    </div>
 
-    <a href="#projects" class="btn">
-        View Projects
-    </a>
+  </section>
 
-    <a href="resume.pdf" class="btn resume-btn" download>
-        Download Resume
-    </a>
+  <!-- Candidate -->
+  <section class="dashboard-section" id="candidate">
 
-</div>
-        </div>
+    <h1 class="section-title">Candidate Dashboard</h1>
 
-        <div class="hero-image">
-            <img src="nancy.jpg" alt="Nancy">
-        </div>
+    <div class="candidate-card">
 
-    </section>
+      <div>
+        <h2>Nancy Nishad</h2>
+        <p>Profile: Web Developer</p>
+        <p>Applications Sent: 3</p>
+        <p>Status: Active Candidate</p>
+      </div>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+      <div>
+        <h3>Saved Jobs</h3>
+        <p>Frontend Developer</p>
+        <p>UI/UX Designer</p>
+      </div>
 
-        <h2 class="section-title">About Me</h2>
+    </div>
 
-        <div class="about-container">
+  </section>
 
-            <div class="about-image">
-            <img src="nancy.jpg" alt="Nancy">
-            </div>
+  <!-- Apply -->
+  <section class="apply-section" id="apply">
 
-            <div class="about-text">
+    <h1 class="section-title">Job Application Form</h1>
 
-                <p>
-                    I am a passionate first-year B.Tech student interested in
-                    Web Development, UI/UX design, Flutter apps, and futuristic projects.
-                </p>
+    <div class="apply-card">
 
-                <p>
-                    I love building modern cyberpunk and space-themed interfaces
-                    with smooth animations and creative ideas.
-                </p>
+      <input type="text" placeholder="Selected Job">
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email Address">
+      <input type="text" placeholder="Phone Number">
 
-            </div>
+      <input type="file">
 
-        </div>
+      <textarea placeholder="Why should we hire you?"></textarea>
 
-    </section>
+      <button onclick="showNotification()">
+        Submit Application
+      </button>
 
-    <!-- SKILLS -->
-    <section class="skills" id="skills">
+    </div>
 
-        <h2 class="section-title">My Skills</h2>
+  </section>
 
-        <div class="skills-container">
+  <!-- Notification -->
+  <div id="notification">
+    Application Submitted Successfully 🚀
+  </div>
 
-            <div class="skill-card">HTML</div>
-            <div class="skill-card">CSS</div>
-            <div class="skill-card">JavaScript</div>
-            <div class="skill-card">Python</div>
-            <div class="skill-card">Flutter</div>
-            <div class="skill-card">UI/UX</div>
+  <!-- Footer -->
+  <footer>
+    © 2026 NeoHire Job Board | Designed By Nancy
+  </footer>
 
-        </div>
-
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-
-        <h2 class="section-title">Projects</h2>
-
-        <div class="project-container">
-
-            <div class="project-card">
-
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
-
-                <h3>MindLock</h3>
-
-                <p>
-                    AI-powered screen addiction reduction app with futuristic UI.
-                </p>
-
-            </div>
-
-            <div class="project-card">
-
-                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1200&auto=format&fit=crop" alt="">
-
-                <h3>Cosmic Chat App</h3>
-
-                <p>
-                    Space-themed anonymous chat app inspired by galaxy aesthetics.
-                </p>
-
-            </div>
-
-            <div class="project-card">
-
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="">
-
-                <h3>Portfolio Website</h3>
-
-                <p>
-                    Personal responsive portfolio with glassmorphism design.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <h2 class="section-title">Contact Me</h2>
-
-        <div class="contact-container">
-
-            <p>Email: nancy955987@gmail.com</p>
-
-            <p>Phone: +91 9569718169</p>
-
-            <p>LinkedIn: linkedin.com/in/nancy-nishad</p>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 Nancy Nishad | All Rights Reserved
-        </p>
-
-    </footer>
-
-    <!-- JS -->
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
->>>>>>> 3eea45e5fff65ebbb3dddebc288e1d9a8748e903
